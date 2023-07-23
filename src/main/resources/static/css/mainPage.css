@@ -1,0 +1,159 @@
+ul.nav a, ul.nav a:visited {
+    padding: 5px 5px 5px 15px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    background-color: #EEE;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+ul, ol, dl {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+a img {
+    border: none;
+}
+
+a:link {
+    color: #414958;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #4E5869;
+    text-decoration: underline;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+.container {
+    width: 1000px;
+    background-color: #FFF;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header {
+    background-color: #FFF;
+    margin-top: 20px;
+}
+
+.sidebar1 {
+    float: left;
+    width: 25%;
+    padding-bottom: 10px;
+    margin: 10px;
+}
+
+.content {
+    padding: 10px 0;
+    width: 65%;
+    float: left;
+}
+
+ul.nav {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
+    background: #FFF;
+    color: #999;
+}
+
+.search_form {
+    background-color: #3d768a;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-top: 20px;
+    width: 90%;
+    padding: 7px;
+    text-align: left;
+    float: left;
+}
+
+.logo {
+    text-align: left;
+}
+
+.search_button {
+    box-shadow: 0 10px 14px -7px #276873;
+    background: #599bb3 linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:7px 6px;
+    text-decoration:none;
+    text-shadow:0 1px 0 #3d768a;
+}
+
+.search_button:hover {
+    background: #408c99 linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+}
+
+.search_button:active {
+    position:relative;
+    top:1px;
+}
+
+.book_info {
+    font-size: 12px;
+    margin-right: 35px;
+    float: left;
+    max-width: 200px;
+}
+
+.book_title {
+    color: #378de5;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.image_welcome img, .image_welcome h4, .image_welcome a{
+    float: left;
+}
+
+.welcome_message {
+    margin-left: 50px;
+    margin-top: 50px;
+    max-width: 250px;
+}
+
+.letters {
+    float: left;
+    margin: 10px 10px 40px 10px;
+}
+
+.letters a {
+    float: left;
+    margin: 5px;
+}
+
+.page_swapper {
+    margin-top: 15px;
+    text-align: right;
+    float: left;
+    width: 65%;
+}
+
+
