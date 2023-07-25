@@ -13,7 +13,7 @@
         </div>
 
         <form class="search_form" name="search_form" th:method="get" th:action="@{/library}">
-          <input type="text" name="search_string" value="" size="100"/>
+          <input type="text" name="search_string" th:value="${search_string}" size="100"/>
           <input class="search_button" type="submit" value="Поиск"/>
           <select name="search_option">
             <option>Названиe</option>
@@ -27,7 +27,8 @@
         <ul class="nav">
           <li style="margin-bottom: 10px;" th:each="genre : ${genres}">
             <a th:text="${genre.getName()}"
-               th:href="@{'/library?genre_id=' + ${genre.getId()} + '&name=' + ${genre.getName()}}"></a>
+               th:href="@{'/library?genre_id=' + ${genre.getId()} + '&name=' + ${genre.getName()}}">
+            </a>
           </li>
         </ul>
       </div>

@@ -1,4 +1,4 @@
-package ru.sekunov.library.start;
+package ru.sekunov.library;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

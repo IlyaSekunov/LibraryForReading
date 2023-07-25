@@ -3,10 +3,9 @@ package ru.sekunov.library.main;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.sekunov.library.author.Author;
-import ru.sekunov.library.author.AuthorDAO;
+import ru.sekunov.library.author.AuthorService;
 import ru.sekunov.library.book.Book;
-import ru.sekunov.library.book.BookDAO;
-
+import ru.sekunov.library.book.BookService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,8 +13,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LibraryService {
 
-    private final BookDAO bookDAO;
-    private final AuthorDAO authorDAO;
+    private final BookService bookService;
+    private final AuthorService authorService;
 
     public List<Integer> getPagesArray(int pagesCount) {
         List<Integer> pagesArray = new ArrayList<>();
@@ -34,7 +33,7 @@ public class LibraryService {
     public List<Author> getBooksAuthors(List<Book> books) {
         List<Author> authors = new ArrayList<>();
         for (Book book : books) {
-            authors.add(authorDAO.getAuthorById(book.getAuthorId()));
+            authors.add(authorService.findAuthorById(book.getAuthor().getId()));
         }
         return authors;
     }
@@ -42,21 +41,21 @@ public class LibraryService {
     public List<Book> bookListAccordingToParams(String genreId, String letter, String searchString, String searchOption) {
         List<Book> bookList;
         if (genreId != null) {
-            bookList = bookDAO.getBooksByGenre(Integer.parseInt(genreId));
+            bookList = bookService.findAllByGenreId(Integer.parseInt(genreId));
         } else if (letter != null) {
-            bookList = bookDAO.getBooksByLetter(letter);
-        } else if (searchString != null) {
-            BookDAO.SearchType searchType = BookDAO.SearchType.TITLE;
+            bookList = bookService.findAllContainsLetter(letter);
+        } else if (searchString != null && searchOption != null) {
+            BookService.SearchType searchType = BookService.SearchType.TITLE;
             if (searchOption.equals("Автор")) {
-                searchType = BookDAO.SearchType.AUTHOR;
+                searchType = BookService.SearchType.AUTHOR;
             }
             if (!searchString.trim().equals("")) {
-                bookList = bookDAO.getBooksBySearch(searchString, searchType);
+                bookList = bookService.findAllBySearch(searchString, searchType);
             } else {
-                bookList = bookDAO.getAllBooks();
+                bookList = bookService.findAll();
             }
         } else {
-            bookList = bookDAO.getAllBooks();
+            bookList = bookService.findAll();
         }
         return bookList;
     }
